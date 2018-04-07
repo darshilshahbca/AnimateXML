@@ -21,6 +21,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonClick(View v) {
+        Animation animation = AnimationUtils.loadAnimation(this, R.anim.grow);
+
+        animation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                imageView.setScaleX(2);
+                imageView.setScaleY(2);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        imageView.startAnimation(animation);
     }
 
     public void onShrinkBtnClick(View v) {
